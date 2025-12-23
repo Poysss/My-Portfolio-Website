@@ -10,6 +10,7 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow: hidden; /* Hide overflow if image extends beyond viewport */
+  background-color: black;
 }
 
 body::before {
@@ -23,7 +24,7 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 1; /* Adjust this value for desired opacity */
+  opacity: 0.5; /* Adjust this value for desired opacity */
   z-index: -1; /* Place the pseudo-element behind the content */
 }
 
