@@ -1,5 +1,5 @@
 #tsparticles {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -8,9 +8,9 @@
 }
 
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -18,22 +18,37 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0;
-  overflow: hidden; /* Hide overflow if image extends beyond viewport */
   background-color: black;
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('./assets/home-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.5; /* Adjust this value for desired opacity */
-  z-index: -1; /* Place the pseudo-element behind the content */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
+.section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: white;
+}
+
+.home {
+  background-color: transparent;
+}
+
+.section-one {
+  background-color: #ff6347; /* Tomato */
+}
+
+.section-two {
+  background-color: #4682b4; /* SteelBlue */
+}
+
+.section-three {
+  background-color: #3cb371; /* MediumSeaGreen */
+}
